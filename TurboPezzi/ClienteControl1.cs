@@ -66,7 +66,7 @@ namespace TurboPezzi
             dataGridView1.DataSource = res;
 
         }
-        // HEAD
+
         //numero di telaio moto
         private void textBox7_TextChanged(object sender, EventArgs e)
         {

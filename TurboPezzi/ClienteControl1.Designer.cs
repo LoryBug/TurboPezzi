@@ -318,6 +318,7 @@ namespace TurboPezzi
 
             this.button3.Location = new System.Drawing.Point(580, 235);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(363, 39);
             this.button3.TabIndex = 27;
@@ -365,6 +366,7 @@ namespace TurboPezzi
 
             this.dateTimePicker1.Location = new System.Drawing.Point(291, 314);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(133, 22);
             this.dateTimePicker1.TabIndex = 42;
