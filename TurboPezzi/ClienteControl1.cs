@@ -82,7 +82,8 @@ namespace TurboPezzi
                 Numero_telaio = int.Parse(textBox7.Text),
                 Marca = comboBox2.Text,
                 Modello = textBox9.Text,
-                Cilindrata = int.Parse(comboBox1.Text)
+                Cilindrata = int.Parse(comboBox1.Text),
+                CF = textBox6.Text
 
             };
             db.MOTOs.InsertOnSubmit(add);
@@ -147,6 +148,11 @@ namespace TurboPezzi
             };
             db.CLIENTEs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+        }
+        // codice fiscale per moto
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
