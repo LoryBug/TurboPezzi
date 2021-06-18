@@ -79,7 +79,7 @@ namespace TurboPezzi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //button inserisci prodotto
+            /*//button inserisci prodotto
             sqlDataContext db = new sqlDataContext();
             RICAMBIO add = new RICAMBIO
             {
@@ -90,7 +90,7 @@ namespace TurboPezzi
 
             };
             db.RICAMBIOs.InsertOnSubmit(add);
-            db.SubmitChanges();
+            db.SubmitChanges();*/
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -109,6 +109,11 @@ namespace TurboPezzi
         }
 
         private void AcquistoControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

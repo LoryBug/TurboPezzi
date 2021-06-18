@@ -66,7 +66,7 @@ namespace TurboPezzi
         private void button3_Click(object sender, EventArgs e)
         {
             //button calcola ricavi
-            sqlDataContext db = new sqlDataContext();
+           /* sqlDataContext db = new sqlDataContext();
             RICAMBIO add = new RICAMBIO
             {
                 CodiceRicambio = int.Parse(textBox10.Text),
@@ -76,7 +76,7 @@ namespace TurboPezzi
 
             };
             db.RICAMBIOs.InsertOnSubmit(add);
-            db.SubmitChanges();
+            db.SubmitChanges();*/
         }
 
         private void button4_Click(object sender, EventArgs e)

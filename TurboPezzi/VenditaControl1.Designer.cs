@@ -97,11 +97,8 @@ namespace TurboPezzi
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(412, 50);
             this.label3.Name = "label3";
-<<<<<<< HEAD
+
             this.label3.Size = new System.Drawing.Size(148, 20);
-=======
-            this.label3.Size = new System.Drawing.Size(140, 16);
->>>>>>> cb79796ca9eccd8d17ebfa60cddc7dd901cc4367
             this.label3.TabIndex = 30;
             this.label3.Text = "RICAVI MENSILI";
             // 
