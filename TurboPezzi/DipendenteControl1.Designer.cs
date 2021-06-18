@@ -300,6 +300,7 @@ namespace TurboPezzi
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 49;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // button3
             // 
@@ -309,6 +310,7 @@ namespace TurboPezzi
             this.button3.TabIndex = 51;
             this.button3.Text = "Rimuovi dipendente";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -332,6 +334,7 @@ namespace TurboPezzi
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 61;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -361,6 +364,7 @@ namespace TurboPezzi
             this.button4.TabIndex = 57;
             this.button4.Text = "Inserisci contratto";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label17
             // 
@@ -389,6 +393,7 @@ namespace TurboPezzi
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(132, 22);
             this.textBox11.TabIndex = 53;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // button5
             // 
@@ -403,16 +408,20 @@ namespace TurboPezzi
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Fascia I",
-            "Fascia II",
-            "Fascia III",
-            "Fascia IV"});
+            "800",
+            "1000",
+            "1250",
+            "1500",
+            "1750",
+            "1900",
+            "2000"});
             this.comboBox3.Location = new System.Drawing.Point(583, 220);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.MaxLength = 1;
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(132, 24);
             this.comboBox3.TabIndex = 64;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -420,9 +429,9 @@ namespace TurboPezzi
             this.label3.Location = new System.Drawing.Point(581, 199);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 63;
-            this.label3.Text = "Stipendio";
+            this.label3.Text = "Stipendio [€]";
             // 
             // dateTimePicker1
             // 
@@ -438,6 +447,7 @@ namespace TurboPezzi
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker2.TabIndex = 66;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -445,6 +455,7 @@ namespace TurboPezzi
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker3.TabIndex = 67;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // DipendenteControl1
             // 

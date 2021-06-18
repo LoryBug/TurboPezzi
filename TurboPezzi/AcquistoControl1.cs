@@ -111,6 +111,7 @@ namespace TurboPezzi
         private void AcquistoControl1_Load(object sender, EventArgs e)
         {
 
+
         }
     }
 }

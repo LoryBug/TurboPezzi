@@ -95,5 +95,60 @@ namespace TurboPezzi
         {
 
         }
+
+        //inserisci contratto 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sqlDataContext db = new sqlDataContext();
+            CONTRATTO add = new CONTRATTO
+            {
+                CodiceContratto = int.Parse(textBox1.Text),
+                Tipologia = comboBox1.Text,
+                Data_assunzione = dateTimePicker3.Value,
+                Data_Termine = dateTimePicker2.Value,
+                Stipendio = int.Parse(comboBox3.Text)
+
+            };
+            db.CONTRATTOs.InsertOnSubmit(add);
+            db.SubmitChanges();
+
+        }
+        // codice contratto 
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //tipologia contratto
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        // data assunzione
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        //data termine
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        //stipendio
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        //rimuovere dipendente 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sqlDataContext db = new sqlDataContext();
+            
+            db.SubmitChanges();
+        }
+        //codice per rimuovere dipendente
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
