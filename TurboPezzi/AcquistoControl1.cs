@@ -102,5 +102,15 @@ namespace TurboPezzi
         {
 
         }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AcquistoControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
