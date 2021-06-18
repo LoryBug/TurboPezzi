@@ -302,8 +302,13 @@ namespace TurboPezzi
             // 
             // button2
             // 
+<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(61, 384);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.button2.Location = new System.Drawing.Point(46, 312);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> cb79796ca9eccd8d17ebfa60cddc7dd901cc4367
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(363, 39);
             this.button2.TabIndex = 26;
@@ -313,8 +318,13 @@ namespace TurboPezzi
             // 
             // button3
             // 
+<<<<<<< HEAD
             this.button3.Location = new System.Drawing.Point(580, 235);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.button3.Location = new System.Drawing.Point(435, 191);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> cb79796ca9eccd8d17ebfa60cddc7dd901cc4367
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(363, 39);
             this.button3.TabIndex = 27;
@@ -359,8 +369,13 @@ namespace TurboPezzi
             // 
             // dateTimePicker1
             // 
+<<<<<<< HEAD
             this.dateTimePicker1.Location = new System.Drawing.Point(291, 314);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.dateTimePicker1.Location = new System.Drawing.Point(218, 255);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> cb79796ca9eccd8d17ebfa60cddc7dd901cc4367
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(133, 22);
             this.dateTimePicker1.TabIndex = 42;
