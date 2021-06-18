@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TurboPezzi" Class="sqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-DSD8TBJN;Initial Catalog=TurboPezzi;Persist Security Info=True;User ID=TurboPezziUsr" SettingsObjectName="TurboPezzi.Properties.Settings" SettingsPropertyName="TurboPezziConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VENDITA" Member="VENDITAs">
+    <Type Name="VENDITA">
+      <Column Name="CodiceImpiegato" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceVendita" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceFatturaV" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Association Name="VENDITA_DETTAGLIO_ORDINE" Member="DETTAGLIO_ORDINEs" ThisKey="CodiceImpiegato,CodiceVendita" OtherKey="CodiceImpiegato,CodiceVendita" Type="DETTAGLIO_ORDINE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENTE" Member="CLIENTEs">
+    <Type Name="CLIENTE">
+      <Column Name="CF" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Cognome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="[Data di nascita]" Member="Data_di_nascita" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="CLIENTE_FATTURA_DI_VENDITA" Member="FATTURA_DI_VENDITAs" ThisKey="CF" OtherKey="CF" Type="FATTURA_DI_VENDITA" />
+      <Association Name="CLIENTE_MOTO" Member="MOTOs" ThisKey="CF" OtherKey="CF" Type="MOTO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.composizione_acquisto" Member="composizione_acquistos">
+    <Type Name="composizione_acquisto">
+      <Column Name="CodiceRicambio" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceFatturaA" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantità" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[Prezzo unitario]" Member="Prezzo_unitario" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" CanBeNull="false" />
+      <Association Name="FATTURA_DI_ACQUISTO_composizione_acquisto" Member="FATTURA_DI_ACQUISTO" ThisKey="CodiceFatturaA" OtherKey="CodiceFatturaA" Type="FATTURA_DI_ACQUISTO" IsForeignKey="true" />
+      <Association Name="RICAMBIO_composizione_acquisto" Member="RICAMBIO" ThisKey="CodiceRicambio" OtherKey="CodiceRicambio" Type="RICAMBIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONTRATTO" Member="CONTRATTOs">
+    <Type Name="CONTRATTO">
+      <Column Name="CodiceImpiegato" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceContratto" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Data assunzione]" Member="Data_assunzione" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Data Termine]" Member="Data_Termine" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Tipologia" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Stipendio" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Codicetitolare" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Association Name="DIPENDENTE_CONTRATTO" Member="DIPENDENTE" ThisKey="CodiceImpiegato" OtherKey="CodiceImpiegato" Type="DIPENDENTE" IsForeignKey="true" />
+      <Association Name="TITOLARE_CONTRATTO" Member="TITOLARE" ThisKey="Codicetitolare" OtherKey="Codicetitolare" Type="TITOLARE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[DETTAGLIO ORDINE]" Member="DETTAGLIO_ORDINEs">
+    <Type Name="DETTAGLIO_ORDINE">
+      <Column Name="CodiceRicambio" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Numero ordine]" Member="Numero_ordine" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceImpiegato" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceVendita" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantità" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[Prezzo unitario]" Member="Prezzo_unitario" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" CanBeNull="false" />
+      <Association Name="VENDITA_DETTAGLIO_ORDINE" Member="VENDITA" ThisKey="CodiceImpiegato,CodiceVendita" OtherKey="CodiceImpiegato,CodiceVendita" Type="VENDITA" IsForeignKey="true" />
+      <Association Name="RICAMBIO_DETTAGLIO_ORDINE" Member="RICAMBIO" ThisKey="CodiceRicambio" OtherKey="CodiceRicambio" Type="RICAMBIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIPENDENTE" Member="DIPENDENTEs">
+    <Type Name="DIPENDENTE">
+      <Column Name="CodiceImpiegato" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="Char(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Cognome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="[Data di nascita]" Member="Data_di_nascita" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Attivo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="DIPENDENTE_CONTRATTO" Member="CONTRATTOs" ThisKey="CodiceImpiegato" OtherKey="CodiceImpiegato" Type="CONTRATTO" />
+      <Association Name="DIPENDENTE_RIGENERAZIONE" Member="RIGENERAZIONEs" ThisKey="CodiceImpiegato" OtherKey="CodiceImpiegato" Type="RIGENERAZIONE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[FATTURA DI ACQUISTO]" Member="FATTURA_DI_ACQUISTOs">
+    <Type Name="FATTURA_DI_ACQUISTO">
+      <Column Name="CodiceFatturaA" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Data emissione]" Member="Data_emissione" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Importo netto]" Member="Importo_netto" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[P.IVA]" Member="P_IVA" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Association Name="FATTURA_DI_ACQUISTO_composizione_acquisto" Member="composizione_acquistos" ThisKey="CodiceFatturaA" OtherKey="CodiceFatturaA" Type="composizione_acquisto" />
+      <Association Name="FORNITORE_FATTURA_DI_ACQUISTO" Member="FORNITORE" ThisKey="P_IVA" OtherKey="P_IVA" Type="FORNITORE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[FATTURA DI VENDITA]" Member="FATTURA_DI_VENDITAs">
+    <Type Name="FATTURA_DI_VENDITA">
+      <Column Name="CodiceFatturaV" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Data emissione]" Member="Data_emissione" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Importo netto]" Member="Importo_netto" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="Char(25) NOT NULL" CanBeNull="false" />
+      <Association Name="FATTURA_DI_VENDITA_RIGENERAZIONE" Member="RIGENERAZIONEs" ThisKey="CodiceFatturaV" OtherKey="CodiceFatturaV" Type="RIGENERAZIONE" />
+      <Association Name="CLIENTE_FATTURA_DI_VENDITA" Member="CLIENTE" ThisKey="CF" OtherKey="CF" Type="CLIENTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FORNITORE" Member="FORNITOREs">
+    <Type Name="FORNITORE">
+      <Column Name="[P.IVA]" Member="P_IVA" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Nome azienda]" Member="Nome_azienda" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="Indirizzo" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Association Name="FORNITORE_FATTURA_DI_ACQUISTO" Member="FATTURA_DI_ACQUISTOs" ThisKey="P_IVA" OtherKey="P_IVA" Type="FATTURA_DI_ACQUISTO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAGAZZINO" Member="MAGAZZINOs">
+    <Type Name="MAGAZZINO">
+      <Column Name="CodiceMagazzino" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Indirizzo" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="Corsia" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Association Name="MAGAZZINO_RICAMBIO" Member="RICAMBIOs" ThisKey="CodiceMagazzino" OtherKey="CodiceMagazzino" Type="RICAMBIO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MOTO" Member="MOTOs">
+    <Type Name="MOTO">
+      <Column Name="[Numero telaio]" Member="Numero_telaio" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Modello" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Cilindrata" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="Char(25) NOT NULL" CanBeNull="false" />
+      <Association Name="CLIENTE_MOTO" Member="CLIENTE" ThisKey="CF" OtherKey="CF" Type="CLIENTE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RICAMBIO" Member="RICAMBIOs">
+    <Type Name="RICAMBIO">
+      <Column Name="CodiceRicambio" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="[Quantità scorta]" Member="Quantità_scorta" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceMagazzino" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Association Name="RICAMBIO_composizione_acquisto" Member="composizione_acquistos" ThisKey="CodiceRicambio" OtherKey="CodiceRicambio" Type="composizione_acquisto" />
+      <Association Name="RICAMBIO_DETTAGLIO_ORDINE" Member="DETTAGLIO_ORDINEs" ThisKey="CodiceRicambio" OtherKey="CodiceRicambio" Type="DETTAGLIO_ORDINE" />
+      <Association Name="MAGAZZINO_RICAMBIO" Member="MAGAZZINO" ThisKey="CodiceMagazzino" OtherKey="CodiceMagazzino" Type="MAGAZZINO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RIGENERAZIONE" Member="RIGENERAZIONEs">
+    <Type Name="RIGENERAZIONE">
+      <Column Name="CodiceImpiegato" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodiceRigenerazione" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Data rilascio]" Member="Data_rilascio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceFatturaV" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
+      <Association Name="DIPENDENTE_RIGENERAZIONE" Member="DIPENDENTE" ThisKey="CodiceImpiegato" OtherKey="CodiceImpiegato" Type="DIPENDENTE" IsForeignKey="true" />
+      <Association Name="FATTURA_DI_VENDITA_RIGENERAZIONE" Member="FATTURA_DI_VENDITA" ThisKey="CodiceFatturaV" OtherKey="CodiceFatturaV" Type="FATTURA_DI_VENDITA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TITOLARE" Member="TITOLAREs">
+    <Type Name="TITOLARE">
+      <Column Name="Codicetitolare" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CF" Type="System.String" DbType="Char(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Cognome" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="[Data di nascita]" Member="Data_di_nascita" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="TITOLARE_CONTRATTO" Member="CONTRATTOs" ThisKey="Codicetitolare" OtherKey="Codicetitolare" Type="CONTRATTO" />
+    </Type>
+  </Table>
+</Database>
