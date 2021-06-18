@@ -24,7 +24,7 @@ namespace TurboPezzi
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            //text box codice magazzino
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace TurboPezzi
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
+            //val changer  corsie
         }
 
         private void button4_Click(object sender, EventArgs e)
