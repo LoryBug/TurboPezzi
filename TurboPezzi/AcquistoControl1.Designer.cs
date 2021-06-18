@@ -53,6 +53,8 @@ namespace TurboPezzi
             this.label18 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,13 +176,13 @@ namespace TurboPezzi
             this.label2.Location = new System.Drawing.Point(560, 32);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 20);
+            this.label2.Size = new System.Drawing.Size(230, 20);
             this.label2.TabIndex = 81;
-            this.label2.Text = "INSERIMENTO NUOVO RICAMBIO";
+            this.label2.Text = "INSERIMENTO RICAMBIO";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(564, 332);
+            this.button1.Location = new System.Drawing.Point(564, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(362, 40);
             this.button1.TabIndex = 82;
@@ -273,7 +275,7 @@ namespace TurboPezzi
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(564, 210);
+            this.richTextBox1.Location = new System.Drawing.Point(564, 271);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(362, 106);
             this.richTextBox1.TabIndex = 95;
@@ -282,17 +284,37 @@ namespace TurboPezzi
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(561, 189);
+            this.label14.Location = new System.Drawing.Point(561, 251);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 17);
             this.label14.TabIndex = 94;
             this.label14.Text = "Descrizione";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 189);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 17);
+            this.label3.TabIndex = 97;
+            this.label3.Text = "Codice Magazzino";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(564, 210);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 22);
+            this.textBox3.TabIndex = 96;
+            // 
             // AcquistoControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox1);
@@ -350,5 +372,7 @@ namespace TurboPezzi
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

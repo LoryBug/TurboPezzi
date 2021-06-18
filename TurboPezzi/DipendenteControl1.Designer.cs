@@ -82,12 +82,13 @@ namespace TurboPezzi
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(53, 327);
+            this.button2.Location = new System.Drawing.Point(53, 326);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(362, 40);
             this.button2.TabIndex = 40;
             this.button2.Text = "Inserisci dipendente";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label9
             // 
@@ -156,6 +157,7 @@ namespace TurboPezzi
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 32;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -164,6 +166,7 @@ namespace TurboPezzi
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 31;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -172,6 +175,7 @@ namespace TurboPezzi
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 30;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
@@ -180,6 +184,7 @@ namespace TurboPezzi
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 29;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -188,6 +193,7 @@ namespace TurboPezzi
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 28;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label11
             // 
@@ -251,6 +257,7 @@ namespace TurboPezzi
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 22);
             this.textBox7.TabIndex = 45;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // comboBox2
             // 
@@ -264,6 +271,7 @@ namespace TurboPezzi
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(132, 24);
             this.comboBox2.TabIndex = 48;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -422,6 +430,7 @@ namespace TurboPezzi
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(132, 22);
             this.dateTimePicker1.TabIndex = 65;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 

@@ -65,9 +65,9 @@ namespace TurboPezzi
             this.label4.Location = new System.Drawing.Point(42, 87);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
+            this.label4.Size = new System.Drawing.Size(147, 17);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Codice servizio";
+            this.label4.Text = "Codice Rigenerazione";
             // 
             // textBox1
             // 
@@ -76,6 +76,7 @@ namespace TurboPezzi
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 28;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -94,6 +95,7 @@ namespace TurboPezzi
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 41;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // richTextBox1
             // 
@@ -102,6 +104,7 @@ namespace TurboPezzi
             this.richTextBox1.Size = new System.Drawing.Size(387, 125);
             this.richTextBox1.TabIndex = 42;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button1
             // 
@@ -111,6 +114,7 @@ namespace TurboPezzi
             this.button1.TabIndex = 43;
             this.button1.Text = "Inserisci dipendente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RigenerazioneControl1
             // 

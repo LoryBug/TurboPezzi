@@ -100,9 +100,9 @@ namespace TurboPezzi
             this.label3.Location = new System.Drawing.Point(550, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 20);
+            this.label3.Size = new System.Drawing.Size(148, 20);
             this.label3.TabIndex = 30;
-            this.label3.Text = "RICAVATI MENSILI";
+            this.label3.Text = "RICAVI MENSILI";
             // 
             // label4
             // 
@@ -275,7 +275,7 @@ namespace TurboPezzi
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(362, 40);
             this.button3.TabIndex = 54;
-            this.button3.Text = "Calcola ricavati";
+            this.button3.Text = "Calcola ricavi";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4

@@ -19,6 +19,37 @@ namespace TurboPezzi
 
         private void label7_Click(object sender, EventArgs e)
         {
-                    }
+        }
+        //codice rigenerazione
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //aggiungi rigenerazione button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sqlDataContext db = new sqlDataContext();
+            RIGENERAZIONE add = new RIGENERAZIONE
+            {
+                CodiceRigenerazione = int.Parse(textBox1.Text),
+                Data_rilascio = dateTimePicker1.Value,
+                Descrizione = richTextBox1.Text
+
+            };
+            db.RIGENERAZIONEs.InsertOnSubmit(add);
+            db.SubmitChanges();
+        }
+
+        //rigenerazione
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        //descrizione
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
