@@ -118,22 +118,22 @@ namespace TurboPezzi
         //inserisci contratto 
         private void button4_Click(object sender, EventArgs e)
         {
-            sqlDataContext db = new sqlDataContext();
-            CONTRATTO add = new CONTRATTO
-            {
-                CodiceImpiegato = int.Parse(textBox6.Text),
-                CodiceContratto = int.Parse(textBox1.Text),
-                Tipologia = comboBox1.Text,
-                Data_assunzione = dateTimePicker3.Value,
-                Data_Termine = dateTimePicker2.Value,
-                Stipendio = int.Parse(comboBox3.Text),
-                Codicetitolare = int.Parse(textBox9.Text)
+              sqlDataContext db = new sqlDataContext();
+              CONTRATTO add = new CONTRATTO
+              {
+                  CodiceImpiegato = int.Parse(textBox6.Text),
+                  CodiceContratto = int.Parse(textBox11.Text),
+                  Tipologia = comboBox1.Text,
+                  Data_assunzione = dateTimePicker3.Value,
+                  Data_Termine = dateTimePicker2.Value,
+                  Stipendio = int.Parse(comboBox3.Text),
+                  Codicetitolare = int.Parse(textBox9.Text)
 
-            };
-            db.CONTRATTOs.InsertOnSubmit(add);
-            db.SubmitChanges();
+              };
+              db.CONTRATTOs.InsertOnSubmit(add);
+              db.SubmitChanges();
 
-            textBox1.Text = " ";
+            textBox11.Text = " ";
             textBox6.Text = " ";
             comboBox1.Text = " ";
             comboBox3.Text = " ";
