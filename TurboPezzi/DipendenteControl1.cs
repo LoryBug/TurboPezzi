@@ -102,6 +102,7 @@ namespace TurboPezzi
             sqlDataContext db = new sqlDataContext();
             CONTRATTO add = new CONTRATTO
             {
+                CodiceImpiegato = int.Parse(textBox6.Text),
                 CodiceContratto = int.Parse(textBox1.Text),
                 Tipologia = comboBox1.Text,
                 Data_assunzione = dateTimePicker3.Value,
@@ -147,6 +148,11 @@ namespace TurboPezzi
         }
         //codice per rimuovere dipendente
         private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }

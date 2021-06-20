@@ -84,6 +84,7 @@ namespace TurboPezzi
                 Modello = textBox9.Text,
                 Cilindrata = int.Parse(comboBox1.Text),
                 CF = textBox6.Text
+   
 
             };
             db.MOTOs.InsertOnSubmit(add);
