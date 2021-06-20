@@ -64,7 +64,7 @@ namespace TurboPezzi
             var res = from c in db.CLIENTEs
                       select c;
             dataGridView1.DataSource = res;
-
+            /// cliente con più fatture di vendita
         }
 
         //numero di telaio moto
@@ -84,6 +84,7 @@ namespace TurboPezzi
                 Modello = textBox9.Text,
                 Cilindrata = int.Parse(comboBox1.Text),
                 CF = textBox6.Text
+   
 
             };
             db.MOTOs.InsertOnSubmit(add);

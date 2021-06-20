@@ -44,6 +44,7 @@ namespace TurboPezzi
         //inserisci dipendente button
         private void button2_Click(object sender, EventArgs e)
         {
+
             char att = '0' ;
             if (comboBox2.Text.Equals("Attivo"))
             {
@@ -51,6 +52,7 @@ namespace TurboPezzi
             }
 
            sqlDataContext db = new sqlDataContext();
+
             DIPENDENTE add = new DIPENDENTE
             {
                 CF = textBox1.Text,
@@ -72,6 +74,10 @@ namespace TurboPezzi
             textBox5.Text = " ";
             textBox7.Text = " ";
             comboBox2.Text = " ";
+
+
+
+
         }
         //nome dipendente
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -115,11 +121,14 @@ namespace TurboPezzi
             sqlDataContext db = new sqlDataContext();
             CONTRATTO add = new CONTRATTO
             {
+                CodiceImpiegato = int.Parse(textBox6.Text),
                 CodiceContratto = int.Parse(textBox1.Text),
                 Tipologia = comboBox1.Text,
                 Data_assunzione = dateTimePicker3.Value,
                 Data_Termine = dateTimePicker2.Value,
                 Stipendio = int.Parse(comboBox3.Text)
+
+
 
             };
             db.CONTRATTOs.InsertOnSubmit(add);
@@ -159,14 +168,22 @@ namespace TurboPezzi
         //rimuovere dipendente 
         private void button3_Click(object sender, EventArgs e)
         {
+            // leggo codice impiegato
+            // aggiorno lo stato di dipendente 
+           
             sqlDataContext db = new sqlDataContext();
             
             db.SubmitChanges();
-            textBox8.Text = " ";
 
+            textBox8.Text = " ";
         }
         //codice per rimuovere dipendente
         private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }

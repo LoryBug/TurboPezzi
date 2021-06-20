@@ -226,9 +226,9 @@ namespace TurboPezzi
             this.label2.Location = new System.Drawing.Point(579, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(359, 20);
+            this.label2.Size = new System.Drawing.Size(258, 20);
             this.label2.TabIndex = 42;
-            this.label2.Text = "INSERIMENTO / MODIFICA CONTRATTO";
+            this.label2.Text = "INSERIMENTO  CONTRATTO";
             // 
             // label5
             // 
@@ -466,6 +466,7 @@ namespace TurboPezzi
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 68;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // DipendenteControl1
             // 
