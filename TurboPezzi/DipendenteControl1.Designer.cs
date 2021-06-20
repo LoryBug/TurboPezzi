@@ -67,6 +67,8 @@ namespace TurboPezzi
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -328,7 +330,7 @@ namespace TurboPezzi
             "Part-time",
             "Full-time",
             "Stagionale"});
-            this.comboBox1.Location = new System.Drawing.Point(793, 93);
+            this.comboBox1.Location = new System.Drawing.Point(793, 220);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.MaxLength = 1;
             this.comboBox1.Name = "comboBox1";
@@ -369,7 +371,7 @@ namespace TurboPezzi
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(790, 72);
+            this.label17.Location = new System.Drawing.Point(790, 199);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(126, 17);
@@ -457,10 +459,30 @@ namespace TurboPezzi
             this.dateTimePicker3.TabIndex = 67;
             this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(790, 74);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(116, 17);
+            this.label19.TabIndex = 69;
+            this.label19.Text = "Codice impiegato";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(793, 95);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(132, 22);
+            this.textBox6.TabIndex = 68;
+            // 
             // DipendenteControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -547,5 +569,7 @@ namespace TurboPezzi
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
