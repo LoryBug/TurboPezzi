@@ -50,7 +50,7 @@ namespace TurboPezzi
                 att = '1';
             }
 
-            sqlDataContext db = new sqlDataContext();
+           sqlDataContext db = new sqlDataContext();
             DIPENDENTE add = new DIPENDENTE
             {
                 CF = textBox1.Text,
@@ -124,6 +124,11 @@ namespace TurboPezzi
             };
             db.CONTRATTOs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+            textBox1.Text = " ";
+            comboBox1.Text = " ";
+            comboBox2.Text = " ";
+            
 
         }
         // codice contratto 

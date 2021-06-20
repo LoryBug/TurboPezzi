@@ -88,6 +88,12 @@ namespace TurboPezzi
             };
             db.MOTOs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+            textBox7.Text = " ";
+            comboBox2.Text = " ";
+            textBox9.Text = " ";
+            comboBox1.Text = " ";
+            textBox6.Text = " ";
         }
 
         //marca moto
@@ -148,6 +154,13 @@ namespace TurboPezzi
             };
             db.CLIENTEs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+            textBox1.Text = " ";
+            textBox2.Text = " ";
+            textBox3.Text = " ";
+            textBox4.Text = " ";
+            textBox5.Text = " ";
+
 
         }
         // codice fiscale per moto
