@@ -61,7 +61,6 @@ namespace TurboPezzi
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -215,9 +214,9 @@ namespace TurboPezzi
             this.label12.Location = new System.Drawing.Point(49, 421);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(234, 20);
+            this.label12.Size = new System.Drawing.Size(240, 20);
             this.label12.TabIndex = 41;
-            this.label12.Text = "RIMOZIONE DIPENDENTE";
+            this.label12.Text = "RIMOZIONE DIPENDENTE ";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label2
@@ -360,9 +359,9 @@ namespace TurboPezzi
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(583, 264);
+            this.button4.Location = new System.Drawing.Point(583, 254);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(176, 40);
+            this.button4.Size = new System.Drawing.Size(342, 40);
             this.button4.TabIndex = 57;
             this.button4.Text = "Inserisci contratto";
             this.button4.UseVisualStyleBackColor = true;
@@ -396,15 +395,6 @@ namespace TurboPezzi
             this.textBox11.Size = new System.Drawing.Size(132, 22);
             this.textBox11.TabIndex = 53;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(765, 264);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 40);
-            this.button5.TabIndex = 62;
-            this.button5.Text = "Modifica contratto";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // comboBox3
             // 
@@ -489,7 +479,6 @@ namespace TurboPezzi
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
@@ -564,7 +553,6 @@ namespace TurboPezzi
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
