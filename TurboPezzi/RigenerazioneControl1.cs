@@ -29,7 +29,7 @@ namespace TurboPezzi
         //aggiungi rigenerazione button
         private void button1_Click(object sender, EventArgs e)
         {
-            /* sqlDataContext db = new sqlDataContext();
+             sqlDataContext db = new sqlDataContext();
              RIGENERAZIONE add = new RIGENERAZIONE
              {
                  CodiceRigenerazione = int.Parse(textBox1.Text),
@@ -40,7 +40,7 @@ namespace TurboPezzi
 
              };
              db.RIGENERAZIONEs.InsertOnSubmit(add);
-             db.SubmitChanges();*/
+             db.SubmitChanges();
 
             textBox1.Text = " ";
             richTextBox1.Text = " ";

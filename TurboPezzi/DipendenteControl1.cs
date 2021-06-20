@@ -44,10 +44,10 @@ namespace TurboPezzi
         //inserisci dipendente button
         private void button2_Click(object sender, EventArgs e)
         {
-            char var = '0' ;
+            char att = '0' ;
             if (comboBox2.Text.Equals("Attivo"))
             {
-                var = '1';
+                att = '1';
             }
 
             sqlDataContext db = new sqlDataContext();
@@ -60,7 +60,7 @@ namespace TurboPezzi
                 Mail = textBox5.Text,
                 Data_di_nascita = dateTimePicker1.Value,
                 CodiceImpiegato = int.Parse(textBox7.Text),
-                Attivo = var
+                Attivo = att
             };
             db.DIPENDENTEs.InsertOnSubmit(add);
             db.SubmitChanges();
