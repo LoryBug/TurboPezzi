@@ -29,23 +29,23 @@ namespace TurboPezzi
         //aggiungi rigenerazione button
         private void button1_Click(object sender, EventArgs e)
         {
-            sqlDataContext db = new sqlDataContext();
-            RIGENERAZIONE add = new RIGENERAZIONE
-            {
-                CodiceRigenerazione = int.Parse(textBox1.Text),
-                Data_rilascio = dateTimePicker1.Value,
-                Descrizione = richTextBox1.Text, 
-                CodiceFatturaV = int.Parse(textBox3.Text),
-                CodiceImpiegato = int.Parse(textBox2.Text)
+            /* sqlDataContext db = new sqlDataContext();
+             RIGENERAZIONE add = new RIGENERAZIONE
+             {
+                 CodiceRigenerazione = int.Parse(textBox1.Text),
+                 Data_rilascio = dateTimePicker1.Value,
+                 Descrizione = richTextBox1.Text, 
+                 CodiceFatturaV = int.Parse(textBox3.Text),
+                 CodiceImpiegato = int.Parse(textBox2.Text)
 
-            };
-            db.RIGENERAZIONEs.InsertOnSubmit(add);
-            db.SubmitChanges();
+             };
+             db.RIGENERAZIONEs.InsertOnSubmit(add);
+             db.SubmitChanges();*/
 
-            textBox1.AppendText(" ");
-            richTextBox1.AppendText(" ");
-            textBox2.AppendText(" ");
-            textBox3.AppendText(" ");
+            textBox1.Text = " ";
+            richTextBox1.Text = " ";
+            textBox2.Text = " ";
+            textBox3.Text = " ";
         }
 
         //rigenerazione
