@@ -44,6 +44,12 @@ namespace TurboPezzi
         //inserisci dipendente button
         private void button2_Click(object sender, EventArgs e)
         {
+            char var = '0' ;
+            if (comboBox2.Text.Equals("Attivo"))
+            {
+                var = '1';
+            }
+
             sqlDataContext db = new sqlDataContext();
             DIPENDENTE add = new DIPENDENTE
             {
@@ -54,11 +60,18 @@ namespace TurboPezzi
                 Mail = textBox5.Text,
                 Data_di_nascita = dateTimePicker1.Value,
                 CodiceImpiegato = int.Parse(textBox7.Text),
-                Attivo = char.Parse(comboBox2.Text)           
+                Attivo = var
             };
             db.DIPENDENTEs.InsertOnSubmit(add);
             db.SubmitChanges();
 
+            textBox1.Text = " ";
+            textBox2.Text = " ";
+            textBox3.Text = " ";
+            textBox4.Text = " ";
+            textBox5.Text = " ";
+            textBox7.Text = " ";
+            comboBox2.Text = " ";
         }
         //nome dipendente
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -144,6 +157,8 @@ namespace TurboPezzi
             sqlDataContext db = new sqlDataContext();
             
             db.SubmitChanges();
+            textBox8.Text = " ";
+
         }
         //codice per rimuovere dipendente
         private void textBox8_TextChanged(object sender, EventArgs e)
