@@ -178,15 +178,10 @@ namespace TurboPezzi
 
         }
 
-        //password 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //password
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-          
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -207,6 +202,11 @@ namespace TurboPezzi
             {
                 button7.Text = "Log In: Failed";
             }
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

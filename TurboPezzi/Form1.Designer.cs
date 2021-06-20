@@ -45,7 +45,6 @@ namespace TurboPezzi
             this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.magazzinoControl11 = new TurboPezzi.MagazzinoControl1();
             this.acquistoControl11 = new TurboPezzi.AcquistoControl1();
             this.venditaControl11 = new TurboPezzi.VenditaControl1();
@@ -143,7 +142,7 @@ namespace TurboPezzi
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button6);
@@ -169,7 +168,6 @@ namespace TurboPezzi
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel3.Controls.Add(this.checkBox1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
@@ -217,6 +215,7 @@ namespace TurboPezzi
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(240, 22);
             this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // button7
             // 
@@ -248,17 +247,6 @@ namespace TurboPezzi
             this.label2.Size = new System.Drawing.Size(163, 29);
             this.label2.TabIndex = 15;
             this.label2.Text = "USER NAME";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(507, 203);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 21);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "show password";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // magazzinoControl11
             // 
@@ -358,7 +346,6 @@ namespace TurboPezzi
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

@@ -34,7 +34,9 @@ namespace TurboPezzi
             {
                 CodiceRigenerazione = int.Parse(textBox1.Text),
                 Data_rilascio = dateTimePicker1.Value,
-                Descrizione = richTextBox1.Text
+                Descrizione = richTextBox1.Text, 
+                CodiceFatturaV = int.Parse(textBox3.Text),
+                CodiceImpiegato = int.Parse(textBox2.Text)
 
             };
             db.RIGENERAZIONEs.InsertOnSubmit(add);
@@ -48,6 +50,16 @@ namespace TurboPezzi
         }
         //descrizione
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //codice fattura 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //codice impiegato
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
