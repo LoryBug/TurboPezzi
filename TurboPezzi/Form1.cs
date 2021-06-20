@@ -172,20 +172,6 @@ namespace TurboPezzi
 
         }
 
-        //log in button 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Equals("admin") && textBox2.Text.Equals("admin")) {
-                button7.Text = "Log In: Successful";
-                button7.Enabled = false;
-                changeButton();
-            }
-            else {
-                button7.Text = "Log In: Failed";
-            }
-
-        }
-
         //user name 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -196,6 +182,31 @@ namespace TurboPezzi
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        //login
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Equals("admin") && textBox2.Text.Equals("admin"))
+            {
+                button7.Text = "Log In: Successful";
+                button7.Enabled = false;
+                changeButton();
+            }
+            else
+            {
+                button7.Text = "Log In: Failed";
+            }
         }
     }
 }
