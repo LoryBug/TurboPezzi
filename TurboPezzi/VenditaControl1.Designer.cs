@@ -31,7 +31,6 @@ namespace TurboPezzi
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@ namespace TurboPezzi
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -62,11 +60,6 @@ namespace TurboPezzi
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -93,23 +86,11 @@ namespace TurboPezzi
             this.label1.TabIndex = 29;
             this.label1.Text = "Inserimento dettaglio ordine";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(549, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-
-            this.label3.Size = new System.Drawing.Size(148, 20);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "RICAVI MENSILI";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(533, 287);
+            this.label4.Location = new System.Drawing.Point(542, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(235, 20);
@@ -139,7 +120,7 @@ namespace TurboPezzi
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(275, 103);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 37;
@@ -147,7 +128,7 @@ namespace TurboPezzi
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(45, 103);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 36;
@@ -176,7 +157,7 @@ namespace TurboPezzi
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(275, 155);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 41;
@@ -184,7 +165,7 @@ namespace TurboPezzi
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(45, 155);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 40;
@@ -212,7 +193,7 @@ namespace TurboPezzi
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(45, 236);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 22);
             this.textBox6.TabIndex = 44;
@@ -240,7 +221,7 @@ namespace TurboPezzi
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(275, 286);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 22);
             this.textBox7.TabIndex = 49;
@@ -248,7 +229,7 @@ namespace TurboPezzi
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(45, 286);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 48;
@@ -275,20 +256,9 @@ namespace TurboPezzi
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(537, 203);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(363, 39);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "Calcola ricavi";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(537, 314);
+            this.button4.Location = new System.Drawing.Point(546, 82);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(363, 39);
@@ -300,7 +270,7 @@ namespace TurboPezzi
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(537, 370);
+            this.dataGridView1.Location = new System.Drawing.Point(546, 139);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -370,7 +340,7 @@ namespace TurboPezzi
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(45, 439);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 63;
@@ -378,7 +348,7 @@ namespace TurboPezzi
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(45, 391);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(132, 22);
             this.textBox9.TabIndex = 64;
@@ -392,77 +362,10 @@ namespace TurboPezzi
             this.richTextBox1.TabIndex = 65;
             this.richTextBox1.Text = "";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(533, 144);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 17);
-            this.label17.TabIndex = 69;
-            this.label17.Text = "Anno";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(537, 165);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(132, 22);
-            this.textBox10.TabIndex = 68;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(533, 94);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 17);
-            this.label18.TabIndex = 67;
-            this.label18.Text = "Mese";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Gennaio",
-            "Febbraio ",
-            "Marzo",
-            "Aprile",
-            "Maggio",
-            "Giugno",
-            "Luglio",
-            "Agosto",
-            "Settembre",
-            "Ottobre",
-            "Novembre",
-            "Dicembre"});
-            this.comboBox1.Location = new System.Drawing.Point(537, 114);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.MaxLength = 1;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 70;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(728, 165);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(113, 20);
-            this.label21.TabIndex = 73;
-            this.label21.Text = "{ Result :   }";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
-            // 
             // VenditaControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox5);
@@ -474,7 +377,6 @@ namespace TurboPezzi
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label11);
@@ -493,7 +395,6 @@ namespace TurboPezzi
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -511,7 +412,6 @@ namespace TurboPezzi
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
@@ -530,7 +430,6 @@ namespace TurboPezzi
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -542,10 +441,5 @@ namespace TurboPezzi
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label21;
     }
 }
