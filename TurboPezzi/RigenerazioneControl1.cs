@@ -41,6 +41,11 @@ namespace TurboPezzi
             };
             db.RIGENERAZIONEs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+            textBox1.AppendText(" ");
+            richTextBox1.AppendText(" ");
+            textBox2.AppendText(" ");
+            textBox3.AppendText(" ");
         }
 
         //rigenerazione
