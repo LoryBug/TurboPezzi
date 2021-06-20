@@ -142,6 +142,9 @@ namespace TurboPezzi
         //rimuovere dipendente 
         private void button3_Click(object sender, EventArgs e)
         {
+            // leggo codice impiegato
+            // aggiorno lo stato di dipendente 
+           
             sqlDataContext db = new sqlDataContext();
             
             db.SubmitChanges();
