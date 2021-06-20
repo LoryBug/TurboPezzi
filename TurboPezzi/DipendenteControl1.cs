@@ -126,19 +126,19 @@ namespace TurboPezzi
                 Tipologia = comboBox1.Text,
                 Data_assunzione = dateTimePicker3.Value,
                 Data_Termine = dateTimePicker2.Value,
-                Stipendio = int.Parse(comboBox3.Text)
-
-
+                Stipendio = int.Parse(comboBox3.Text),
+                Codicetitolare = int.Parse(textBox9.Text)
 
             };
             db.CONTRATTOs.InsertOnSubmit(add);
             db.SubmitChanges();
 
             textBox1.Text = " ";
+            textBox6.Text = " ";
             comboBox1.Text = " ";
-            comboBox2.Text = " ";
-            
-
+            comboBox3.Text = " ";
+            textBox9.Text = " ";
+          
         }
         // codice contratto 
         private void textBox11_TextChanged(object sender, EventArgs e)
@@ -184,6 +184,11 @@ namespace TurboPezzi
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //codice titolare
+        private void textBox9_TextChanged(object sender, EventArgs e)
         {
 
         }

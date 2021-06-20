@@ -68,6 +68,8 @@ namespace TurboPezzi
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -359,7 +361,7 @@ namespace TurboPezzi
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(583, 254);
+            this.button4.Location = new System.Drawing.Point(583, 307);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(342, 40);
             this.button4.TabIndex = 57;
@@ -468,10 +470,31 @@ namespace TurboPezzi
             this.textBox6.TabIndex = 68;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(581, 257);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(103, 17);
+            this.label20.TabIndex = 71;
+            this.label20.Text = "Codice Titolare";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(584, 278);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(132, 22);
+            this.textBox9.TabIndex = 70;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            // 
             // DipendenteControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.dateTimePicker3);
@@ -560,5 +583,7 @@ namespace TurboPezzi
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
