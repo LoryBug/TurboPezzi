@@ -66,9 +66,19 @@ namespace TurboPezzi
             //tendina categoria
         }
 
+        // bottone visualizza ricambi per categoria
         private void button1_Click(object sender, EventArgs e)
         {
-            // bottone visualizza ricambi per categoria
+            
+            sqlDataContext db = new sqlDataContext();
+            
+            foreach (RICAMBIO ricambio in db.RICAMBIOs)
+            {
+                if (ricambio.Categoria == comboBox1.Text)
+                {
+                    dataGridView1.DataSource = ricambio;
+                }
+            }
         }
     }
 }
