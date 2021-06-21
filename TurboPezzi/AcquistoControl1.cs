@@ -54,6 +54,13 @@ namespace TurboPezzi
             };
             db.FORNITOREs.InsertOnSubmit(add);
             db.SubmitChanges();
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox5.Text = "";
+            textBox4.Text = "";
+            textBox7.Text = "";
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -79,35 +86,26 @@ namespace TurboPezzi
         private void button1_Click(object sender, EventArgs e)
         {
             //button inserisci prodotto
-            sqlDataContext db = new sqlDataContext();
-            var prod = from r in db.RICAMBIOs
-                      where r.CodiceRicambio.Equals(textBox12.Text)
-                      select r;
-            List<decimal> ricambi = new List<decimal>(); //lista dei ricambi presenti nel db
-            prod.ToList().ForEach(d => ricambi.Add(d.CodiceRicambio));
-
-
-            /*var res = from r in db.RICAMBIOs
-                      let c = from d in prod
-                              select d.CodiceRicambio
-                      where ricambi.Contains(r.CodiceRicambio) == false
-                      select new { r.CodiceRicambio, r.Marca, r.Categoria, r.Quantità_scorta, r.Descrizione, r.CodiceMagazzino };*/             
-
-            if (!prod.Any()){
-                RICAMBIO r = new RICAMBIO();
-                r.CodiceRicambio = int.Parse(textBox10.Text);
-                r.Marca = textBox9.Text;
-                r.Categoria = comboBox1.Text;
-                r.CodiceMagazzino = int.Parse(textBox3.Text);
-                r.Descrizione = richTextBox1.Text;
-                r.Quantità_scorta = numericUpDown1.Value;
-                db.RICAMBIOs.InsertOnSubmit(r);
-            }
-            else
+            sqlDataContext db = new sqlDataContext();          
+            RICAMBIO ric = new RICAMBIO
             {
-                
-            }
+                Quantità_scorta = 0,
+                CodiceRicambio = int.Parse(textBox10.Text),
+                CodiceMagazzino = int.Parse(textBox3.Text),
+                Categoria = comboBox1.Text,
+                Descrizione = richTextBox1.Text,
+                Marca = textBox9.Text
+               
+            };
+            db.RICAMBIOs.InsertOnSubmit(ric);
             db.SubmitChanges();
+
+            textBox10.Text = "";
+            textBox3.Text = "";
+            comboBox1.Text = "";
+            richTextBox1.Text = "";
+            textBox9.Text = "";
+
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -171,26 +169,8 @@ namespace TurboPezzi
             
 
             sqlDataContext db = new sqlDataContext();                      
-            composizione_acquisto ca = new composizione_acquisto
-                {
-                    CodiceRicambio = int.Parse(textBox12.Text),
-                    CodiceFatturaA = int.Parse(textBox11.Text),
-                    Prezzo_unitario = int.Parse(textBox6.Text),
-                    Quantità = numericUpDown1.Value
-
-                };
-            db.composizione_acquistos.InsertOnSubmit(ca);
-
-            /*var queryRicambi = from p in db.RICAMBIOs
-                               where p.CodiceRicambio.Equals(textBox10.Text)
-                               select p;*/
-            /*foreach(RICAMBIO ric in queryRicambi) //aggiorno quantità scorta ric
-            {
-                ric.Quantità_scorta = ric.Quantità_scorta + ca.Quantità;
-                
-            }*/
-            var tot = ca.Quantità * ca.Prezzo_unitario;
-            this.imp = tot;
+            
+           
             
 
             db.SubmitChanges();
@@ -203,10 +183,15 @@ namespace TurboPezzi
 
         private void button5_Click(object sender, EventArgs e) //fattura d'aquisto
         {
-            /*
-             this.countImporto = this.countImporto + (c.Quantità * c.PrezzoUnitario);
-             this.importoNetto.ResetText();
-             this.importoNetto.Text = this.countImporto.ToString();*/
+
+
+            var q = numericUpDown1.Value;
+            var p = int.Parse(textBox6.Text);
+            var iva = 1 + int.Parse(textBox13.Text);
+
+            this.imp = (this.imp + (q * p)) + iva;
+            
+
             sqlDataContext db = new sqlDataContext();
             FATTURA_DI_ACQUISTO fat = new FATTURA_DI_ACQUISTO
             {
@@ -216,13 +201,36 @@ namespace TurboPezzi
                 IVA = int.Parse(textBox13.Text),
                 P_IVA = int.Parse(textBox8.Text)
             };
-            db.FATTURA_DI_ACQUISTOs.InsertOnSubmit(fat);
-            this.imp = 0;
+            composizione_acquisto ca = new composizione_acquisto
+            {
+                CodiceRicambio = int.Parse(textBox12.Text),
+                CodiceFatturaA = int.Parse(textBox11.Text),
+                Prezzo_unitario = int.Parse(textBox6.Text),
+                Quantità = numericUpDown1.Value
 
-            // devo settare il textbox14 di importo netto come prezzo unitario per quantita
-            
-             //fat.Importo_netto
+            };
+            db.composizione_acquistos.InsertOnSubmit(ca);
+
+            var queryRicambi = from ric in db.RICAMBIOs
+                               where ric.CodiceRicambio.Equals(textBox12.Text)
+                               select ric;
+            foreach (RICAMBIO ric in queryRicambi) //aggiorno quantità scorta ric
+            {
+                ric.Quantità_scorta = ric.Quantità_scorta + ca.Quantità;
+
+            }
+
+
+            this.label28.ResetText();
+            this.label28.Text = this.imp.ToString();
+            db.FATTURA_DI_ACQUISTOs.InsertOnSubmit(fat);
             db.SubmitChanges();
+
+            textBox11.Text = "";
+            textBox13.Text = "";
+            textBox8.Text = "";
+            textBox12.Text = "";
+            textBox6.Text = "";
 
         }
 
@@ -242,6 +250,11 @@ namespace TurboPezzi
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
         {
 
         }

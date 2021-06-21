@@ -12,6 +12,7 @@ namespace TurboPezzi
 {
     public partial class VenditaControl1 : UserControl
     {
+        private decimal imp = 0;
         public VenditaControl1()
         {
             InitializeComponent();
@@ -51,56 +52,96 @@ namespace TurboPezzi
         {
             //button inserimento vendita
             sqlDataContext db = new sqlDataContext();
+            var q = numericUpDown1.Value;
+            var p = int.Parse(textBox6.Text);
+            var iva = 1 + (int.Parse(textBox5.Text));
+
+            this.imp = (q * p)+iva;
+
             VENDITA add = new VENDITA
             {
                 CodiceFatturaV = int.Parse(textBox1.Text),
                 CodiceVendita = int.Parse(textBox2.Text),
                 CodiceImpiegato = int.Parse(textBox4.Text),
-                
-
-
-                
-
-
+                Descrizione = richTextBox1.Text
             };
             db.VENDITAs.InsertOnSubmit(add);
-            db.SubmitChanges();
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //button calcola ricavi
-           /* sqlDataContext db = new sqlDataContext();
-            RICAMBIO add = new RICAMBIO
+
+            FATTURA_DI_VENDITA fv = new FATTURA_DI_VENDITA
             {
-                CodiceRicambio = int.Parse(textBox10.Text),
-                Marca = textBox9.Text,
-                //da sistemare
-
-
+                CodiceFatturaV = int.Parse(textBox1.Text),
+                Data_emissione = dateTimePicker1.Value,
+                Importo_netto = this.imp,
+                IVA = int.Parse(textBox5.Text),
+                CF = textBox3.Text
             };
-            db.RICAMBIOs.InsertOnSubmit(add);
-            db.SubmitChanges();*/
+            db.FATTURA_DI_VENDITAs.InsertOnSubmit(fv);
+
+            DETTAGLIO_ORDINE dt = new DETTAGLIO_ORDINE
+            {
+                CodiceImpiegato = int.Parse(textBox4.Text),
+                Numero_ordine = int.Parse(textBox8.Text),
+                CodiceRicambio = int.Parse(textBox6.Text),
+                CodiceVendita = int.Parse(textBox2.Text),
+                Quantità = numericUpDown1.Value,
+                Prezzo_unitario = int.Parse(textBox7.Text)
+            };
+
+            foreach (RICAMBIO ric in db.RICAMBIOs)
+            {
+                if (ric.CodiceRicambio == int.Parse(textBox6.Text))
+                {
+                    ric.Quantità_scorta = ric.Quantità_scorta - numericUpDown1.Value;
+                }
+            }
+
+            db.DETTAGLIO_ORDINEs.InsertOnSubmit(dt);
+            db.SubmitChanges();
+            this.label3.ResetText();
+            this.label3.Text = this.imp.ToString();
+
+           
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            richTextBox1.Text = " ";
+            label3.Text = "";
+            this.imp = 0;
+            
+
+
         }
+
 
         private void button4_Click(object sender, EventArgs e)
-        {
-           // var queryRic = from
-            //button visualizza ricambi più venduti
-            /* var res = select v.CodiceImpiegato, COUNT(*) as vendite
-                         from VENDITA as v
-                         group by v.CodiceImpiegato
+        { //ricambio più venduto
+          // var queryRic = from
+          //button visualizza ricambi più venduti
+            sqlDataContext db = new sqlDataContext();
 
-              var queryMax = from dior in db.dettaglio_ordines
-                            join p in db.prodottos on dior.CodiceProdotto equals p.CodiceProdotto
-                            where p.Tipo.Equals("Montatura")
-                            group dior by new { dior.CodiceProdotto, p.Nome } into m
-                            let tot = m.Sum(i => i.quantità)
-                            where tot == queryQ.First().tot
-                            select new { m.Key.CodiceProdotto, m.Key.Nome, tot };
+            var query = (from det in db.DETTAGLIO_ORDINEs
+                          join p in db.RICAMBIOs on det.CodiceRicambio equals p.CodiceRicambio
+                         group det by det.CodiceRicambio into m
+                         let tot = m.Sum(i => i.Quantità)
+                         orderby tot descending
+                         select new { tot}).Take(3);
 
-            dataGridViewMontatura.DataSource = queryMax;
-           */
+            var queryBest = from det in db.DETTAGLIO_ORDINEs
+                           join p in db.RICAMBIOs on det.CodiceRicambio equals p.CodiceRicambio                           
+                           group det by new { det.CodiceRicambio, p.Categoria } into m
+                           let tot = m.Sum(i => i.Quantità)
+                           where tot == query.First().tot
+                           select new { m.Key.CodiceRicambio, m.Key.Categoria, tot };
+            dataGridView1.DataSource = queryBest;
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,6 +165,56 @@ namespace TurboPezzi
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }
