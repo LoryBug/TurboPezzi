@@ -80,9 +80,9 @@ namespace TurboPezzi
             this.label4.Location = new System.Drawing.Point(542, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 20);
+            this.label4.Size = new System.Drawing.Size(235, 20);
             this.label4.TabIndex = 31;
-            this.label4.Text = "RICAMBI PIU\' VENDUTI";
+            this.label4.Text = "RICAMBIO PIU\' VENDUTO";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5

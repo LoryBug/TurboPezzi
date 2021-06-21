@@ -258,5 +258,34 @@ namespace TurboPezzi
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sqlDataContext db = new sqlDataContext();
+
+            //costi mensili
+            DateTime d = new DateTime(Convert.ToInt32(textBox15.Text), Convert.ToInt32(comboBox2.Text), 01);
+            var query = from fa in db.FATTURA_DI_ACQUISTOs
+                        where d.Month.Equals(fa.Data_emissione.Month)
+                        && d.Year.Equals(fa.Data_emissione.Year)
+                        group fa by fa.Data_emissione.Month into g
+                        select new { Risultato = g.Sum(i => i.Importo_netto + i.IVA) };
+            label22.Text = "Totale: " + query.First().Risultato;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

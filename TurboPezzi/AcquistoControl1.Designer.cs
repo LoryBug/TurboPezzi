@@ -502,32 +502,33 @@ namespace TurboPezzi
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(733, 498);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 20);
+            this.label22.Size = new System.Drawing.Size(0, 20);
             this.label22.TabIndex = 130;
-            this.label22.Text = "{ Result :   }";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Gennaio",
-            "Febbraio ",
-            "Marzo",
-            "Aprile",
-            "Maggio",
-            "Giugno",
-            "Luglio",
-            "Agosto",
-            "Settembre",
-            "Ottobre",
-            "Novembre",
-            "Dicembre"});
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
             this.comboBox2.Location = new System.Drawing.Point(543, 447);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.MaxLength = 1;
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(132, 24);
             this.comboBox2.TabIndex = 129;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -546,6 +547,7 @@ namespace TurboPezzi
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(132, 22);
             this.textBox15.TabIndex = 127;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // label26
             // 
@@ -566,6 +568,7 @@ namespace TurboPezzi
             this.button4.TabIndex = 125;
             this.button4.Text = "Calcola costi";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
