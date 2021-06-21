@@ -93,9 +93,9 @@ namespace TurboPezzi
             this.label4.Location = new System.Drawing.Point(542, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 20);
+            this.label4.Size = new System.Drawing.Size(212, 20);
             this.label4.TabIndex = 31;
-            this.label4.Text = "RICAMBIO PIU\' VENDUTO";
+            this.label4.Text = "RICAMBI PIU\' VENDUTI";
             // 
             // label5
             // 
@@ -352,6 +352,7 @@ namespace TurboPezzi
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(132, 22);
             this.textBox9.TabIndex = 64;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // richTextBox1
             // 

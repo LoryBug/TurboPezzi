@@ -53,7 +53,7 @@ namespace TurboPezzi
             sqlDataContext db = new sqlDataContext();
             RICAMBIO add = new RICAMBIO
             {
-                CodiceRicambio = int.Parse(textBox10.Text),
+               // CodiceRicambio = int.Parse(textBox10.Text),
                 Marca = textBox9.Text,
                 //da sistemare
 
@@ -90,6 +90,11 @@ namespace TurboPezzi
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
         {
 
         }

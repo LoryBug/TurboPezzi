@@ -170,8 +170,16 @@ namespace TurboPezzi
         {
             // leggo codice impiegato
             // aggiorno lo stato di dipendente 
-           
+
             sqlDataContext db = new sqlDataContext();
+            foreach (DIPENDENTE dip in db.DIPENDENTEs )
+            {
+                if(dip.CodiceImpiegato == int.Parse(textBox8.Text))
+                {
+                    dip.Attivo = '0';
+                }
+               
+            }
             
             db.SubmitChanges();
 
