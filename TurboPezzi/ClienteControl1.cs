@@ -61,10 +61,22 @@ namespace TurboPezzi
         {
             //button visualizza miglior cliente
             sqlDataContext db = new sqlDataContext();
-            var res = from c in db.CLIENTEs
-                      select c;
-            dataGridView1.DataSource = res;
-            /// cliente con più fatture di vendita
+
+            var queryVendite = (from v in db.FATTURA_DI_VENDITAs
+                          group v by v.CF into m
+                          let tot = m.Count()
+                          orderby tot descending
+                          select new { tot }).Take(1);
+
+            var queryBest = (from v in db.FATTURA_DI_VENDITAs
+                           join d in db.CLIENTEs on v.CF equals d.CF
+
+                          group v by new { v.CF, d.Nome, d.Cognome } into m
+                          let tot = m.Count()
+                          where tot == queryVendite.First().tot
+                          select new { m.Key.CF, m.Key.Nome, m.Key.Cognome , tot });
+
+            dataGridView1.DataSource = queryBest;
         }
 
         //numero di telaio moto

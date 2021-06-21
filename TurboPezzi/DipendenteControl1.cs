@@ -178,8 +178,11 @@ namespace TurboPezzi
                 {
                     dip.Attivo = '0';
                 }
-               
+              
             }
+            
+            
+
             
             db.SubmitChanges();
 
@@ -197,6 +200,31 @@ namespace TurboPezzi
         }
         //codice titolare
         private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        { //miglior dipendente          
+            sqlDataContext db = new sqlDataContext();
+
+            var queryVendite = (from v in db.VENDITAs
+                          group v by v.CodiceImpiegato into m
+                          let tot = m.Count()
+                          orderby tot descending
+                          select new { tot }).Take(1);
+
+            var queryBestCustomer = (from v in db.VENDITAs
+                           join d in db.DIPENDENTEs on v.CodiceImpiegato equals d.CodiceImpiegato
+                          group v by new { v.CodiceImpiegato, d.Nome, d.Cognome } into m
+                          let tot = m.Count()
+                          where tot == queryVendite.First().tot
+                          select new { m.Key.CodiceImpiegato, m.Key.Nome, m.Key.Cognome , tot });
+
+            dataGridView1.DataSource = queryBestCustomer;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
