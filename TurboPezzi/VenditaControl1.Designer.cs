@@ -124,6 +124,7 @@ namespace TurboPezzi
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 37;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -169,6 +170,7 @@ namespace TurboPezzi
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 40;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label8
             // 
