@@ -53,11 +53,12 @@ namespace TurboPezzi
             sqlDataContext db = new sqlDataContext();
             VENDITA add = new VENDITA
             {
-
-              
                 CodiceFatturaV = int.Parse(textBox1.Text),
                 CodiceVendita = int.Parse(textBox2.Text),
                 CodiceImpiegato = int.Parse(textBox4.Text),
+                
+
+
                 
 
 
@@ -84,11 +85,22 @@ namespace TurboPezzi
 
         private void button4_Click(object sender, EventArgs e)
         {
+           // var queryRic = from
             //button visualizza ricambi più venduti
-           /* var res = select v.CodiceImpiegato, COUNT(*) as vendite
-                        from VENDITA as v
-                        group by v.CodiceImpiegato
-          */
+            /* var res = select v.CodiceImpiegato, COUNT(*) as vendite
+                         from VENDITA as v
+                         group by v.CodiceImpiegato
+
+              var queryMax = from dior in db.dettaglio_ordines
+                            join p in db.prodottos on dior.CodiceProdotto equals p.CodiceProdotto
+                            where p.Tipo.Equals("Montatura")
+                            group dior by new { dior.CodiceProdotto, p.Nome } into m
+                            let tot = m.Sum(i => i.quantità)
+                            where tot == queryQ.First().tot
+                            select new { m.Key.CodiceProdotto, m.Key.Nome, tot };
+
+            dataGridViewMontatura.DataSource = queryMax;
+           */
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

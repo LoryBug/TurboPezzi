@@ -181,16 +181,17 @@ namespace TurboPezzi
                 };
             db.composizione_acquistos.InsertOnSubmit(ca);
 
-            var queryRicambi = from p in db.RICAMBIOs
+            /*var queryRicambi = from p in db.RICAMBIOs
                                where p.CodiceRicambio.Equals(textBox10.Text)
-                               select p;
-            foreach(RICAMBIO ric in queryRicambi) //aggiorno quantità scorta ric
+                               select p;*/
+            /*foreach(RICAMBIO ric in queryRicambi) //aggiorno quantità scorta ric
             {
                 ric.Quantità_scorta = ric.Quantità_scorta + ca.Quantità;
                 
-            }
+            }*/
             var tot = ca.Quantità * ca.Prezzo_unitario;
-
+            this.imp = tot;
+            
 
             db.SubmitChanges();
         }
@@ -217,7 +218,8 @@ namespace TurboPezzi
             };
             db.FATTURA_DI_ACQUISTOs.InsertOnSubmit(fat);
             this.imp = 0;
-            // devo settare il textbox14 di importo netto come la 
+
+            // devo settare il textbox14 di importo netto come prezzo unitario per quantita
             
              //fat.Importo_netto
             db.SubmitChanges();

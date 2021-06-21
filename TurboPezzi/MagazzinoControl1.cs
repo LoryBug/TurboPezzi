@@ -54,6 +54,12 @@ namespace TurboPezzi
         private void button4_Click(object sender, EventArgs e)
         {
             //visualizza ricambio scadenza
+            sqlDataContext db = new sqlDataContext();
+            var query = from p in db.RICAMBIOs
+                        where p.Quantità_scorta < 5
+                        select p;
+            dataGridView1.DataSource = query;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,14 +77,13 @@ namespace TurboPezzi
         {
             
             sqlDataContext db = new sqlDataContext();
-            
-            foreach (RICAMBIO ricambio in db.RICAMBIOs)
-            {
-                if (ricambio.Categoria == comboBox1.Text)
-                {
-                    dataGridView1.DataSource = ricambio;
-                }
-            }
+             var query =   from p in db.RICAMBIOs
+                               where p.Categoria.Equals(comboBox1.Text)
+                               select p;
+            dataGridView2.DataSource = query;
+
+
+
         }
     }
 }
