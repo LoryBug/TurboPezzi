@@ -49,17 +49,21 @@ namespace TurboPezzi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //button inserisci prodotto
+            //button inserimento vendita
             sqlDataContext db = new sqlDataContext();
-            RICAMBIO add = new RICAMBIO
+            VENDITA add = new VENDITA
             {
-                CodiceRicambio = int.Parse(textBox10.Text),
-                Marca = textBox9.Text,
-                //da sistemare
+                CodiceFatturaV = int.Parse(textBox1.Text),
+                CodiceVendita = int.Parse(textBox2.Text),
+                CodiceImpiegato = int.Parse(textBox4.Text),
+                
+
+
+                
 
 
             };
-            db.RICAMBIOs.InsertOnSubmit(add);
+            db.VENDITAs.InsertOnSubmit(add);
             db.SubmitChanges();
         }
 
@@ -82,6 +86,10 @@ namespace TurboPezzi
         private void button4_Click(object sender, EventArgs e)
         {
             //button visualizza ricambi più venduti
+           /* var res = select v.CodiceImpiegato, COUNT(*) as vendite
+                        from VENDITA as v
+                        group by v.CodiceImpiegato
+          */
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -90,6 +98,16 @@ namespace TurboPezzi
         }
 
         private void button2_Click(object sender, EventArgs e)
+        { //inserimento dettaglio d'ordine
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
